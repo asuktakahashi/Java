@@ -2,7 +2,7 @@ import java.io.*;
 
 //---------テスト用コード　ここから---------------
 class TestcheckCharacters{
-	//arg[0]で指定したテキストファイルを読み込み、checkCharactersメソッドへ渡し、結果を出力する
+	//args[0]で指定したテキストファイルを読み込み、checkCharactersメソッドへ渡し、結果を出力する
 	public static void main(String args[]){
 		String thisLine;
 
