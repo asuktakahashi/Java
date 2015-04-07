@@ -1,4 +1,4 @@
 java
 ====
 
-for java practice
+for Java memorandum
