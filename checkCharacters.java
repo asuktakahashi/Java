@@ -1,8 +1,8 @@
 import java.io.*;
 
-//---------テスト用コード　ここから---------------
+//---------for test　from here---------------
 class TestcheckCharacters{
-	//args[0]で指定したテキストファイルを読み込み、checkCharactersメソッドへ渡し、結果を出力する
+	//read test data in .txt and print results
 	public static void main(String args[]){
 		String thisLine;
 
@@ -16,24 +16,24 @@ class TestcheckCharacters{
 			System.err.println(e);
 		}
 	}
-//---------テスト用コード　ここまで---------------
+//---------for test to here---------------
 	
 	
 
-//--------------メソッド本体-------------------
+//--------------method-------------------
 public static boolean checkCharacters(String target){
 	char[] charArray = target.toCharArray();
 	int targetChar;
 	
 	for(char ch : charArray){
 		try{
-			byte[] bArray = String.valueOf(ch).getBytes("SJIS");	//SJISのバイトコード取得
+			byte[] bArray = String.valueOf(ch).getBytes("SJIS");	//get SJIS byte code
  
 			if (bArray.length == 1) {
-				//1バイト文字を16進数へ
+				//1 byte
 				targetChar = bArray[0] & 0xFF;
 	 		} else {
-				//2バイト文字を16進数へ
+				//2 bytes
 				targetChar = ((bArray[0] & 0xFF) << 8) | (bArray[1] & 0xFF);
 			}
 			
@@ -42,15 +42,15 @@ public static boolean checkCharacters(String target){
 		}
 		
 		
-		if((0x8140 <= targetChar) && (targetChar <= 0x9872)){ // 第一水準かチェック
-				if((0x8148 == targetChar) || (0x81AC == targetChar)){ return false; } // 第一水準のなかで"？","〓"の場合は、falseを返す
-			// 処理なし
+		if((0x8140 <= targetChar) && (targetChar <= 0x9872)){ // check if the first level
+				if((0x8148 == targetChar) || (0x81AC == targetChar)){ return false; } // exclude individual chars
+			// no process
 		} 
-		else if ((0x989F <= targetChar) && (targetChar <= 0xEAA4)){  // 第二水準かチェック
-			//処理なし
+		else if ((0x989F <= targetChar) && (targetChar <= 0xEAA4)){  // check if the second level
+			//no process
 		}	
-		else if ((0xED40 <= targetChar) && (targetChar <= 0xEEFD)){  // IBM拡張文字かチェック
-			// 処理なし
+		else if ((0xED40 <= targetChar) && (targetChar <= 0xEEFD)){  // check if the IBM extended chars
+			// no process
 		}
 		else {
 			return false;
@@ -59,7 +59,7 @@ public static boolean checkCharacters(String target){
 	}
 	return true;
 }
-//--------------メソッド本体ここまで----------------
+//--------------method----------------
 
 
-}// <-- テスト用コード
+}// <-- for test
