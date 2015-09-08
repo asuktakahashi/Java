@@ -5,13 +5,13 @@ public class EditTextFilesRecursively{
     File files[] = dir.listFiles();
     if( files = null){ return; }
     
-    for(File file: fles){
+    for(File file: files){
       if(!file.exists())
         continue;
       else if(file.isDirectory())
-        readDirectory(file)
+        readDirectory(file)         // call itself when directory
       else if(file.isFile())
-        excute(file);
+        excute(file); 
     }
   }
   
