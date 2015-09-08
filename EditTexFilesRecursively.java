@@ -6,12 +6,10 @@ public class EditTextFilesRecursively{
     if( files = null){ return; }
     
     for(File file: files){
-      if(!file.exists()){
-        continue;
-      } else if(file.isDirectory()){
+      if(file.isDirectory()){
         readDirectory(file)         // call itself when directory
       } else if(file.isFile()){
-        excute(file);
+        execute(file);              // execute the process when file
       }
     }
   }
