@@ -15,6 +15,7 @@ public class EditTextFilesRecursively{
     }
   }
   
+  
   public void execute(File file){ 
     try{
       
@@ -34,9 +35,9 @@ public class EditTextFilesRecursively{
       System.err.println(e);
     }
   }
-}
 
 
-public static void main(String args[]){
-  new EditTextFilesRecursively().readDirectory(new File("C:¥workspace¥"));
+  public static void main(String args[]){
+    new EditTextFilesRecursively().readDirectory(new File("C:¥workspace¥"));
+  }
 }
