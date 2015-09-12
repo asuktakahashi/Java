@@ -3,7 +3,6 @@ import java.io.*;
 public class EditTextFilesRecursively{
   public void readDirectory(File dir){
     File files[] = dir.listFiles();
-    if( files = null){ return; }
     
     for(File file: files){
       if(file.isDirectory()){
@@ -12,6 +11,7 @@ public class EditTextFilesRecursively{
         execute(file);              // execute the process when file
       }
     }
+
   }
   
   
