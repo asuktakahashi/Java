@@ -21,7 +21,7 @@ class TestCheckCharacters{
 	
 
 //--------------method-------------------
-public static boolean checkCharacters(String target){
+public static boolean CheckCharacters(String target){
 	char[] charArray = target.toCharArray();
 	int targetChar;
 	
