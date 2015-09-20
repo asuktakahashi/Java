@@ -1,7 +1,7 @@
 import java.io.*;
 
 //---------for test　from here---------------
-class TestcheckCharacters{
+class TestCheckCharacters{
 	//read test data in .txt and print results
 	public static void main(String args[]){
 		String thisLine;
