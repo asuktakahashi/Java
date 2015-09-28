@@ -16,19 +16,14 @@ public class EditTextFilesRecursively{
   
   
   public void execute(File file){ 
-    try{
+    try(BufferedReader br = new BufferedReader(new FileReader(file));
+        BufferedWriter bw = new BufferedWriter(new FileWriter("result.txt"))){
       
-      BufferedReader br = new BufferedReader(new FileReader(file));
-      BufferedWriter bw = new BufferedWriter(new FileWriter("result.txt"));
-      
-      String line;
-      while((line = br.readLine()) != null){
-        bw.write(line);
-        bw.newLine();
-      }
-      
-      bw.close();
-      br.close();
+        String line;
+        while((line = br.readLine()) != null){
+          bw.write(line);
+          bw.newLine();
+        }
     
     } catch(Exception e) {
       System.err.println(e);
