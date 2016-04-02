@@ -1,4 +1,5 @@
 /**
+ * BinaryGap from codility trainings
  * @param N
  * @return maxGapLength
  */
