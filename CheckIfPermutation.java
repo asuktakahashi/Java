@@ -1,3 +1,7 @@
+/*from codility
+  Lesson4 PermCheck
+ */
+
 import java.util.Arrays;
 
 class Solution_Permutation{
