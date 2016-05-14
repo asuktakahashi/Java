@@ -1,5 +1,4 @@
 Java
 ====
 
-for Java memorandum
-Util method etc.
+for Java memorandum.
